@@ -5,7 +5,7 @@ import { Songs } from "../Context";
 export default function Playsing(){
     const {Song, handleSetSong} = useContext(Songs)
 
-    
+
    const HandleNext = ()=>{
         handleSetSong(Song.id + 1)
     }
@@ -17,9 +17,11 @@ export default function Playsing(){
        <AudioPlayer  
        className="player-music" 
        src={Song.url} 
+       
        showSkipControls={true} showJumpControls={false}
        onClickNext={HandleNext}
        onClickPrevious={HandlePrevious}
+       onEnded={HandleNext }
        />
         </div>
     )
